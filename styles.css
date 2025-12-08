@@ -581,4 +581,132 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
-   
+    @media (max-width: 768px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .container,
+  .wrapper,
+  main {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+}
+/* ===== Mobile header fix ===== */
+@media (max-width: 768px) {
+
+  header,
+  .header {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header h1,
+  .header h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .header button,
+  .header a {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+
+  .headerContMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #pic1,
+  #pic2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #pic1 img,
+  #pic2 img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  header h1,
+  header p {
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .language {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+@media (max-width: 768px) {
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .categoryFilter {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .categoryBtn {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+}
+
