@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="calendar.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+     <div class="headerContMain">
+        <div id="pic1">
+            <img  src="images/LisaSt.jpg" alt="left avatar">
+        </div>
+     <div>
+        <h1>Jotly</h1>
+        <p data-i18n="subtitle">Little Notes, Big Thoughts</p>
+        <select id="language" class="language">
+            <!-- <option value="en-US">English</option>
+            <option value="ru-RU">Русский</option>
+            <option value="uk-UA">Украинська</option> -->
+        </select>
+     </div>
+        <div id="pic2">
+            <img  src="images/3 (1).jpg" alt="right avatar">
+        </div>
+     </div>
+    </header>
+    <div>
+        <button id="toggleCalendar" class="toggleCalendar" type="button"><img src="images/calendar-edit-svgrepo-com (3).svg"
+             alt="Toggle Calendar">
+            </button>
+    </div>
+    <div class="calendar" id="calendarContainer">
+        <div class="calendarHeader">
+<div class="calendarMonth" id="monthYear"></div>
+<div class="calendarBtns">
+    <button type="button" class="calendarBtn" id="prevBtn">
+        <img src="images/arrowleft.svg" alt="icon">
+    </button>
+    <button type="button" class="calendarBtn" id="nextBtn">
+         <img src="images/arrowright.svg" alt="icon">
+    </button>
+</div>
+        </div>
+        <div class="calendarBody">
+<div class="calendarDayNames" id="calendarDayNames">
+
+</div>
+<div class="calendar_Days" id="calendarDays"></div>
+        </div>
+        <div class="calendarFilAll">
+            <button data-i18n="allDatesBtn" id="calendarShowAll">All Dates</button>
+        </div>
+    </div>
+    <div id="categoryFilter" class="categoryFilter">
+<button data-i18n="allCategoriesBtn" class="categoryBtn" data-category="all">All categories</button>
+<button data-i18n="categoryPersonalBtn" class="categoryBtn" data-category="personal">Personal</button>
+<button data-i18n="categoryWorkBtn" class="categoryBtn" data-category="work">Work</button>
+<button data-i18n="categoryShoppingBtn" class="categoryBtn" data-category="shopping">Shopping</button>
+<button data-i18n="categoryHealthBtn" class="categoryBtn" data-category="health">Health</button>
+<button data-i18n="categoryFamilyBtn" class="categoryBtn" data-category="family">Family</button>
+<button data-i18n="categoryTasksBtn" class="categoryBtn" data-category="tasks">Tasks</button>
+<button data-i18n="categoryIdeaBtn" class="categoryBtn" data-category="idea">Idea</button>
+ </div>
+
+    <main class="container">
+    <button id="toggleAddNote" class="toggle-AddNote" type="button"><img src="images/note-edit-svgrepo-com.svg"></button>
+<form id="note-form" aria-label="Add a note">
+    <label for="title" data-i18n="formtitle" class="visually-hidden">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title" 
+    data-i18n-placeholder="formtitlePlaceholder" required>
+    <button type="button" id="micTitle" aria-label="Voice input for title" data-i18n="recordBtnTitle" >  
+          Voice input🎤
+     </button>
+     <p id="recordStatus" data-i18n="recordingStatus" style="color:#e68900; font-weight: 600; margin: 0;" hidden></p>
+    
+    <label for="content" class="visually-hidden" data-i18n="formdescription">Description</label>
+    <textarea id="description" name="description" rows="5" placeholder="Describe the note"
+     data-i18n-placeholder="formdescriptionPlaceholder"></textarea>
+     <button type="button" id="micDiscription" aria-label="Voice input for title"
+      data-i18n="recordBtnDescription" >  
+         Voice input🎤
+     </button>
+     <p id="recordStatusDiscr"  data-i18n="recordingStatusDescription" style="color:#e68900; font-weight: 600;margin: 0;" hidden></p>
+     
+    <label for="category" class="visually-hidden" data-i18n="formcategory">Category</label>
+    <select id="category" name="category">
+        <option data-i18n="categoryPersonal" value="Personal">Personal</option>
+        <option data-i18n="categoryWork" value="Work">Work</option>
+        <option data-i18n="categoryShopping" value="Shopping">Shopping</option>
+        <option data-i18n="categoryHealth" value="Health">Health</option>
+        <option data-i18n="categoryFamily" value="Family">Family</option>
+        <option data-i18n="categoryTasks" value="Tasks">Tasks</option>
+        <option data-i18n="categoryIdea" value="Idea">Idea</option>
+    </select>
+    <input type="hidden" id="noteDate" name="noteDate" value="">
+    
+     <button type="button" id="micCategory" aria-label="Voice input for title"
+     data-i18n="recordBtnCategory">  
+          Voice input🎤
+     </button>
+     <p id="recordStatusCategory" data-i18n="recordingStatusCategory" style="color:#e68900; font-weight: 600; margin: 0;" hidden></p>
+     
+    <div class="form-button">
+        <button type="submit" class="btnSubmit" data-i18n="addNoteBtn">Add a note</button>
+    </div>
+</form>
+
+<article>
+    <h2 id="addedNotes" data-i18n="title">My notes</h2>
+    <div id="addedNotConteiner" class="adedText" aria-live="polite">
+        <!-- Example -->
+         <!-- <div class="card">
+        <img src="images/signpost.jpg">
+        <div class="card-body">
+            <h3>Note title</h3>
+            <p class = 'cardText'>Description</p>
+            <button>Remove</button>
+        </div>
+      </div> -->
+    </div>
+</article>
+</main>
+</body>
+</html>
