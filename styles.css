@@ -30,7 +30,7 @@ header{
 }
 .headerContMain{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -581,7 +581,11 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
+<<<<<<< Updated upstream
     @media (max-width: 768px) {
+=======
+   @media (max-width: 768px) {
+>>>>>>> Stashed changes
 
   body {
     margin: 0;
@@ -709,4 +713,7 @@ h3{
     white-space: nowrap;
   }
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
