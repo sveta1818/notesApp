@@ -64,6 +64,9 @@ padding: 0;
     display: block;
    
 }
+#pic1{
+    padding: 20px 50px;
+}
 main.container{
     display: flex;
     margin: auto;
@@ -590,6 +593,7 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
+    @media (max-width: 768px) {
 
 @media (max-width: 768px) {
 
@@ -600,6 +604,7 @@ h3{
     box-sizing: border-box;
     background-color: var(--background);
     background: radial-gradient(ellipse at top, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.45), rgba(0,0,0,0.9));
   }
 
   .header {
@@ -723,3 +728,4 @@ h3{
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+    }
