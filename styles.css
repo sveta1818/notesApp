@@ -32,7 +32,6 @@ header{
     display: flex;
     justify-content:center;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
 }
 .headerContMain h1{
@@ -56,7 +55,7 @@ header{
     object-fit: cover;
     display: block;
 }
-#pic1, #pic2{
+#pic1{
     padding: 20px 50px;
 }
 main.container{
@@ -581,6 +580,10 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
+<<<<<<< Updated upstream
+=======
+    @media (max-width: 768px) {
+>>>>>>> Stashed changes
 
   body {
     margin: 0;
@@ -627,6 +630,7 @@ h3{
     width: 100%;
     padding: 12px;
     box-sizing: border-box;
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.45), rgba(0,0,0,0.9));
   }
 
   .header {
@@ -660,15 +664,13 @@ h3{
     padding: 10px;
   }
 
-  #pic1,
-  #pic2 {
+  #pic1 {
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
-  #pic1 img,
-  #pic2 img {
+  #pic1 img{
     max-width: 120px;
     height: auto;
   }
@@ -708,4 +710,7 @@ h3{
     white-space: nowrap;
   }
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

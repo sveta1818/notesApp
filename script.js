@@ -2,8 +2,8 @@
 const notesForm = document.getElementById('note-form');
 notesForm.addEventListener('submit', handleFormSubmit);
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
- const photoURL = ['images/photo 1.jpg', 'images/photo2.jpg', 'images/photo3.jpg', 'images/3.jpg'];
- let currIndex = 0;
+//  const photoURL = ['images/photo 1.jpg', 'images/photo2.jpg', 'images/photo3.jpg', 'images/3.jpg'];
+//  let currIndex = 0;
 
  // pic for card, function createPic()
 //checking WEB SPEACH APi:
@@ -312,18 +312,18 @@ card.appendChild(conteinerForBtn);
     card.appendChild(conteinerForBtn);
     
 
-const contForPic = document.createElement('div');
-contForPic.className = 'conteinerCardPicture';
-  function createPic(){
-    const picture = document.createElement('img');
-    picture.className ="cardPicture";
-  picture.setAttribute('src', photoURL[currIndex]);
-  picture.setAttribute('alt', 'Note Picture');
-  currIndex = (currIndex + 1) % photoURL.length;
-  return picture;
-  }
-  contForPic.appendChild(createPic());
-  card.appendChild(contForPic);
+// const contForPic = document.createElement('div');
+// contForPic.className = 'conteinerCardPicture';
+//   function createPic(){
+//     const picture = document.createElement('img');
+//     picture.className ="cardPicture";
+//   picture.setAttribute('src', photoURL[currIndex]);
+//   picture.setAttribute('alt', 'Note Picture');
+//   currIndex = (currIndex + 1) % photoURL.length;
+//   return picture;
+//   }
+//   contForPic.appendChild(createPic());
+//   card.appendChild(contForPic);
   return card;
 
 }
