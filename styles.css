@@ -581,11 +581,6 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
-<<<<<<< Updated upstream
-    @media (max-width: 768px) {
-=======
-   @media (max-width: 768px) {
->>>>>>> Stashed changes
 
   body {
     margin: 0;
@@ -713,7 +708,4 @@ h3{
     white-space: nowrap;
   }
 }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
