@@ -22,10 +22,12 @@ body{
     -moz-osx-font-smoothing:grayscale;
 }
 header{
+  position: relative;
     width: 100%;
     color: white;
-    background-color: #3B3B43;
-    padding: 10px 20px;
+     background-color: var(--background);
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
+    padding: 10px 40px;
     
 }
 .headerContMain{
@@ -49,14 +51,18 @@ header{
     font-size: 25px;
     font-family: sans-serif;
 }
+#pic1{
+position: absolute;
+top: 12px;
+left: 12px;
+padding: 0;
+}
 .headerContMain img{
     width: 100px;
     height: auto;
     object-fit: cover;
     display: block;
-}
-#pic1{
-    padding: 20px 50px;
+   
 }
 main.container{
     display: flex;
@@ -300,15 +306,19 @@ h3{
     margin: 5px 0; 
 }
 #language{
+  position: absolute;
+  right: 40px;
+  top: 60px;
+  transform: translateY(-50%);
     display: flex;
     align-items: center;
-    margin: auto;
+    margin: 0;
     padding: 7px 10px;
      border-radius: var(--radius);
     cursor: pointer;
     font-size: 17px;
     color: var(--text);
-    background-color: black;
+    background-color: rgb(17, 17, 17);
     border: none;
 }
 .toggleCalendar{
@@ -580,49 +590,7 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
-<<<<<<< Updated upstream
-=======
-    @media (max-width: 768px) {
->>>>>>> Stashed changes
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-  }
-
-  .container,
-  .wrapper,
-  main {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  h1, h2, h3 {
-    font-size: 1.3rem;
-  }
-
-  button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-
-/* ===== Mobile header fix ===== */
 @media (max-width: 768px) {
 
   header,
@@ -630,7 +598,8 @@ h3{
     width: 100%;
     padding: 12px;
     box-sizing: border-box;
-    background: radial-gradient(ellipse at top, rgba(0,0,0,0.45), rgba(0,0,0,0.9));
+    background-color: var(--background);
+    background: radial-gradient(ellipse at top, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
   }
 
   .header {
@@ -656,21 +625,26 @@ h3{
 @media (max-width: 768px) {
 
   .headerContMain {
+    position: static;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
+    gap: 4px;
+    padding: 8px;
   }
 
   #pic1 {
+    justify-content: center;
+    position: static;
     width: 100%;
     display: flex;
-    justify-content: center;
+    margin: 0;
+     padding: 0;
   }
 
   #pic1 img{
+    width: 65px;
     max-width: 120px;
     height: auto;
   }
@@ -678,15 +652,29 @@ h3{
   header h1,
   header p {
     text-align: center;
-    margin: 5px 0;
+    margin-top: 0;
+  }
+  .headerContMain p{
+    font-size: 17px;
   }
 
-  .language {
-    width: 100%;
+  #language {
+    position:static;
+     border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 17px;
+    color: var(--text);
+    background-color: rgb(17, 17, 17);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     max-width: 200px;
+    transform: none;
   }
-}
-@media (max-width: 768px) {
+} 
+ @media (max-width: 768px) {
 
   .container {
     width: 100%;
@@ -710,7 +698,28 @@ h3{
     white-space: nowrap;
   }
 }
-<<<<<<< Updated upstream
+.fab{
+  all: unset;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50%;
+   background: #F7C690;
+  color: #1b1b1b;
+  font-size: 32px;
+  line-height: 1;
 
-=======
->>>>>>> Stashed changes
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  z-index: 1000;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
