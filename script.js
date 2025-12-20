@@ -363,26 +363,46 @@ card.classList.toggle('open');
  // open input form:
  const toggleFormBtn = document.getElementById('toggleAddNote');
  const form = document.getElementById('note-form');
+ const fab = document.getElementById('addNoteFab');
  form.classList.add('closed');
- toggleFormBtn.classList.add('closed');
- toggleFormBtn.addEventListener('click', () =>{
+toggleFormBtn.classList.add('closed');
+fab.classList.add('closed');
+
+  function toggleForm(e){
+    const clickedBtn = e.currentTarget;
   const isClosed = form.classList.contains('closed');
   if(isClosed){
     form.classList.remove('closed');
     form.classList.add('open');
-    toggleFormBtn.classList.add('active');
-     toggleFormBtn.classList.remove('closed');
+    clickedBtn.classList.add('active');
+     clickedBtn.classList.remove('closed');
+    if(clickedBtn === fab){
+      toggleFormBtn.classList.remove('active'); 
+    }else{
+      fab.classList.remove('active');
+    }
+    // scroll up:
+    form.scrollIntoView({ behavior: 'smooth', block:'start'});
   } else{
     form.classList.remove('open');
     form.classList.add('closed');
     toggleFormBtn.classList.remove('active');
-    toggleFormBtn.classList.add('closed');
+    fab.classList.remove('active');
   }
- })
+}
+toggleFormBtn.addEventListener('click', toggleForm);
+fab.addEventListener('click',toggleForm);
+
  // function to show all notes for selected date:
-function showNotesForDate(dateString){
+ currentCat = 'all';
+ function showNotesForDate(dateString){
   const allNotes = JSON.parse(localStorage.getItem('notes') || '[]');
-    const filtered = allNotes.filter(n => n.date.startsWith(dateString));
+  const filtered = allNotes.filter(n =>{
+    const dateMatch = n.date.startsWith(dateString);
+    const categoryMatch = currentCat === 'all'|| n.category === currentCat;
+    return dateMatch && categoryMatch;
+  });
+//     // const filtered = allNotes.filter(n => n.date.startsWith(dateString));
     console.log('Notes for:', dateString, filtered);
     const container = document.getElementById('addedNotConteiner');
     container.innerHTML = '';
@@ -402,6 +422,7 @@ window.showNotesForDate = showNotesForDate;
 function showAllNotes(){
   const container = document.getElementById('addedNotConteiner');
   container.innerHTML ='';
+  notes.filter(note => currentCat === 'all'|| note.category === currentCat)
   notes.forEach(note => {
     const noteCard = createNoteCard(
       note.title,
@@ -413,7 +434,7 @@ function showAllNotes(){
   });
 }
 
-//show all notes for selected category:
+// //show all notes for selected category:
 function filterByCategory(category){
 const cards = document.querySelectorAll('.card');
   if(category === 'all'){
@@ -457,6 +478,7 @@ document.querySelectorAll('.categoryBtn').forEach(btn =>{
     filterByCategory(cat);
   })
 })
+
 
 // show card on the page from local storage:
 window.addEventListener('DOMContentLoaded', () => {

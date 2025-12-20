@@ -125,6 +125,11 @@ main article{
   filter: brightness(1);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+@media(max-width:750px){
+.toggle-AddNote{
+    display: none;
+}
+}
 #note-form.closed{
     max-height: 0;
     opacity: 0;
@@ -593,7 +598,6 @@ h3{
     background-attachment: fixed;
     transition: background-image 0.4s ease-in-out;
    }
-    @media (max-width: 768px) {
 
 @media (max-width: 768px) {
 
@@ -728,4 +732,10 @@ h3{
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-    }
+.fab:hover{
+     filter:brightness(0.5);
+}
+.fab.active{
+filter:brightness(0.5);
+}
+    
